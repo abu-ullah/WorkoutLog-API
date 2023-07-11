@@ -12,11 +12,6 @@ from src.utils.validations import check_digits, check_email, check_length, check
 ## Abu: Using body request, we can set the properties of the user
 def add_user(req):
     try:
-        # validationList = []
-        ## validationList = InventoryCount.validate_fields(req = req)
-        # if validationList > 0:
-        #     return [Responses.REQUIRED_FIELDS_MISSING, validationList]
-        
         userToAdd = User()
         
         # Body Request
@@ -25,6 +20,7 @@ def add_user(req):
         email = req.get("email")
         name = req.get("name")
         listFields = [password,email,name]
+        
         # Validations
         # Check missing fields
         missingFieldsMessage = missingFields(listFields)
@@ -46,7 +42,7 @@ def add_user(req):
         }
         
         # Iterate over each case and execute the corresponding action
-        for key,value in validation_cases.items():
+        for key, value in validation_cases.items():
             if value is not None:
                 return value
 
