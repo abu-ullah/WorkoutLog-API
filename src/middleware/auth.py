@@ -9,13 +9,12 @@ from src.utils.libs import decrypt_token
 from src.services.__init__ import MongoDBConnection
 from src.utils.responses import Responses
 import src.globalvars as globalvars
-from pymongo import MongoClient
 
 def authenticate_session(func):
     @wraps(func)
     def wrapper(*args, **kwargs):
         
-        token = request.headers.get('Access-Token')
+        token = request.headers.get('accessToken')
 
         if token is None:
             return jsonify({'message': 'Access token is missing'}), 401

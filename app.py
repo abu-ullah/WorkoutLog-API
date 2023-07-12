@@ -1,14 +1,20 @@
-from flask import Flask
+from flask import Flask, render_template, jsonify, request, Blueprint
+import src.globalvars as globalvars
 from flask_cors import CORS
+
+from src.views.user import user_v1
+from src.utils.responses import Responses
 
 app = Flask(__name__)
 app.config['JSON_SORT_KEYS'] = False
+
+app.register_blueprint(user_v1)
 
 CORS(app, supports_credentials= True)
 
 @app.route("/")
 def index():
-    return "Product Catalog"
+    return ""
 
 @app.errorhandler(404)
 def errorHandle_404(self):

@@ -7,10 +7,10 @@ from base64 import b64encode, b64decode
 
 from src.utils.responses import Responses
 
-def generate_new_inventory_uuid() -> str :
-  inventoryId = str(uuid.uuid4().hex)
+def generate_new_workout_log_id() -> str :
+  workoutLogId = str(uuid.uuid4().hex)
 
-  return inventoryId
+  return workoutLogId
 
 
 def generate_new_user_uuid() -> str :

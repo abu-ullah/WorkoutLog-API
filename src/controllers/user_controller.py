@@ -9,17 +9,15 @@ from src.utils.responses import Responses
 from src.utils.validations import check_digits, check_email, check_length, check_signup_fields, missingFields, validate_password
 
 
-## Abu: Using body request, we can set the properties of the user
 def add_user(req):
     try:
         userToAdd = User()
         
         # Body Request
-        
         password = req.get("password")
         email = req.get("email")
         name = req.get("name")
-        listFields = [password,email,name]
+        listFields = [password, email, name]
         
         # Validations
         # Check missing fields
