@@ -24,10 +24,10 @@ def generate_new_session_uuid() -> str :
 
   return sessionId
 
-def generate_new_item_id() -> str :
-  itemId = str(uuid.uuid4().hex)
+def generate_new_exercise_id() -> str :
+  exerciseId = str(uuid.uuid4().hex)
 
-  return itemId
+  return exerciseId
 
 
 def generate_hash_password(password) -> str:

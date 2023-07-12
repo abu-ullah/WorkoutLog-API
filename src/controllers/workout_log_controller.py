@@ -11,11 +11,12 @@ def add_log_controller(request_body):
         logToAdd = WorkoutLog()
         
         logToAdd.workout_log_id = generate_new_workout_log_id()
-        logToAdd.date_created = request_body.get('date_created', format_date(datetime.now()))
+        logToAdd.date_added = request_body.get('date_added', format_date(datetime.now()))
         logToAdd.name = request_body.get('name')
         logToAdd.location = request_body.get('location', "")
+        logToAdd.exercises = request_body.get('exercises', [])
         logToAdd.notes = request_body.get('notes', "")
-        logToAdd.last_updated = request_body.get('date_created', format_date(datetime.now()))
+        logToAdd.last_updated = request_body.get('date_added', format_date(datetime.now()))
 
         created_by = User()
         created_by.user_id = request_body['created_by'].get('user_id')

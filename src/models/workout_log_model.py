@@ -57,10 +57,9 @@ class WorkoutLog(object):
                     "email": self.created_by.email,
                     "user_id": self.created_by.user_id
                 },
-                "location": self.workout_location,
-                "exercises": [],
-                "date_created": self.date_created,
-                "category": self.category,
+                "location": self.location,
+                "exercises": self.exercises,
+                "date_added": self.date_added,
                 "last_updated": self.last_updated,
                 "isDeleted" : self.isDeleted   
             }
